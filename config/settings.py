@@ -6,7 +6,15 @@ SECRET_KEY = "django-insecure-change_this_key_in_production"
 
 DEBUG = True
 
-ALLOWED_HOSTS: list[str] = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".github.dev"]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://localhost:8000",
+    "http://localhost:8000",
+    "https://127.0.0.1:8000",
+    "http://127.0.0.1:8000",
+    "https://*.github.dev",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
